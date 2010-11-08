@@ -1,0 +1,27 @@
+* { margin:0px; padding:0px; }
+body{
+	font-family:Trebuchet MS, sans-serif;
+	font-size:13px;
+}
+
+
+#container{
+	width:700px;
+	margin:auto;
+}
+
+/* (User) Home Page */
+
+.homebox{
+	width:300px;
+	float:left;
+	margin:10px;
+}
+
+/* Devise Pages */
+
+.devise_pane{
+	width:500px;
+	margin:auto;
+	background-color:#ccc;
+}
