@@ -4,4 +4,7 @@ Acompishm::Application.routes.draw do
 	devise_for :users
 	
 	match "userhome" => "page#userhome", :as => "userhome"
+	match '/auth/:provider/callback' => 'authentications#create'
+
+	resources :authentications
 end
