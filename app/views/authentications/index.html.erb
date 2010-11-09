@@ -1,18 +1,13 @@
 <% title "Authentications" %>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Provider</th>
-    <th>Uid</th>
-  </tr>
-  <% for authentication in @authentications %>
-    <tr>
-      <td><%= authentication.user_id %></td>
-      <td><%= authentication.provider %></td>
-      <td><%= authentication.uid %></td>
-      <td><%= link_to "Destroy", authentication, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<h1>Authenticate</h1>
 
+<% if current_user %>
+	It is possible to use multiple authentication providers with your account. Simply click on the Provider you want to add below:<br />
+<% else %>
+	<b>You can use any of the services below to login:</b><br />
+<% end %>
+
+<% Authentication::Providers.each do |provider| %>
+	<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" unless current_user.providers.include? provider %>
+<% end %>

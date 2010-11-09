@@ -3,6 +3,7 @@
 <div class="homebox"><h2><%= current_user.username %></h2>
 Linked Accounts:<br />
 <% current_user.authentications.each do |auth| %>
-	<%= image_tag "authbuttons/png/#{auth.provider}_32.png" %><%= auth.provider.titleize %><br />
+	<%= image_tag "authbuttons/png/#{auth.provider.gsub(/_/,'')}_32.png" %><%= auth.provider_name %><br />
 <% end %>
+<%= link_to "Add More", authentications_path %><br />
 <%= link_to 'Logout', destroy_user_session_path %></div>

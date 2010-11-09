@@ -8,3 +8,4 @@ gem 'devise', '1.1.rc0'
 gem 'nifty-generators'
 gem 'omniauth'
 gem "mocha", :group => :test
+gem 'mongrel', '1.2.0.pre2'

@@ -1,7 +1,7 @@
 Acompishm::Application.routes.draw do
 	root :to => "page#home"
 
-	devise_for :users
+	devise_for :users, :controllers => { :registrations => 'registrations' }
 	
 	match "userhome" => "page#userhome", :as => "userhome"
 	match '/auth/:provider/callback' => 'authentications#create'
