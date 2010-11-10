@@ -11,7 +11,7 @@
 <% Authentication::Providers.each do |provider| %>
 	<div class="authbutton">
 	<% if current_user %>
-		<% if current_user.providers.include? provider %>
+		<% unless current_user.providers.include? provider %>
 			<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" %><br /><%= provider.gsub(/_/,'').titleize %>
 		<% else %>
 			<%= image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png") %><br /><%= provider.gsub(/_/,'').titleize %>

@@ -1,4 +1,4 @@
-<div class="homebox"><h2>Welcome to Acompishm</h2>Social Achivements for all</div>
+<%= render 'shared/infobox' %>
 
 <div class="homebox"><h2><%= link_to 'Sign In', authentications_path %></h2>You can Sign In with:<br />
 <% Authentication::Providers.each do |provider| %>
@@ -7,3 +7,5 @@
 	</div>
 <% end %>
 </div>
+
+<div class="homebox"><h2>Another Box</h2>MOAR</div>

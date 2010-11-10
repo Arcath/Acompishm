@@ -1,0 +1,20 @@
+<% title "Achievement" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @achievement.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @achievement.description %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @achievement.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_achievement_path(@achievement) %> |
+  <%= link_to "Destroy", @achievement, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", achievements_path %>
+</p>

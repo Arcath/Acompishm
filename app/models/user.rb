@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
 		authentications.map { |auth| p.push auth.provider } 
 		p
 	end
+	
+	def achievements
+		Achivement.find_by_user_id(self.id)
+	end
 end

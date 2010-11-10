@@ -6,10 +6,16 @@
 	<%= stylesheet_link_tag 'main' %>
 </head>
 <body>
-<div id="topbar"><%= link_to "Acompishm", root_url %> (search...)
-<span id="user">USR</span>
+<div id="topbar"><%= link_to "Acompishm", path_to_home %> (search...)
+<% if current_user %>
+	<span id="user"><% current_user.authentications.each do |auth| %>
+		<%= image_tag "authbuttons/png/#{auth.provider.gsub(/_/,'')}_32.png", :width => 16, :height => 16 %>
+	<% end %><%= current_user.username %></span>
+<% end %>
 </div>
-<%= flash[:notice] %>
+<% if notice %>
+<div id="notice"><%= notice %></div>
+<% end %>
 
 <div id="container"><%= yield %></div>
 
