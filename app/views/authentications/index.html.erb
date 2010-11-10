@@ -7,7 +7,21 @@
 <% else %>
 	<b>You can use any of the services below to login:</b><br />
 <% end %>
-
+<div id="buttons">
 <% Authentication::Providers.each do |provider| %>
-	<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" unless current_user.providers.include? provider %>
+	<div class="authbutton">
+	<% if current_user %>
+		<% if current_user.providers.include? provider %>
+			<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" %><br /><%= provider.gsub(/_/,'').titleize %>
+		<% else %>
+			<%= image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png") %><br /><%= provider.gsub(/_/,'').titleize %>
+		<% end %>
+	<% else %>
+		<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" %><br /><%= provider.gsub(/_/,'').titleize %>
+	<% end %>
+	</div>
+<% end %>
+</div>
+<% unless current_user %>
+	You don't have to use a third party service to authenticate, you can use a good old username and password by either <%= link_to "Signing In", new_user_session_path %> or <%= link_to "Sigining Up", new_user_registration_path %>.
 <% end %>

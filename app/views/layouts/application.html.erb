@@ -6,6 +6,9 @@
 	<%= stylesheet_link_tag 'main' %>
 </head>
 <body>
+<div id="topbar"><%= link_to "Acompishm", root_url %> (search...)
+<span id="user">USR</span>
+</div>
 <%= flash[:notice] %>
 
 <div id="container"><%= yield %></div>

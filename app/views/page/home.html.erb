@@ -1,5 +1,9 @@
-<h1>Home</h1>
-
 <div class="homebox"><h2>Welcome to Acompishm</h2>Social Achivements for all</div>
 
-<div class="homebox"><h2>Get Started</h2><%= link_to 'Login', authentications_path %></div>
+<div class="homebox"><h2><%= link_to 'Sign In', authentications_path %></h2>You can Sign In with:<br />
+<% Authentication::Providers.each do |provider| %>
+	<div class="authbutton">
+	<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" %><br /><%= provider.gsub(/_/,'').titleize %>
+	</div>
+<% end %>
+</div>

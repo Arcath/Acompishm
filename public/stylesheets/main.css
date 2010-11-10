@@ -1,4 +1,7 @@
 * { margin:0px; padding:0px; }
+
+img { border:0px; }
+
 body{
 	font-family:Trebuchet MS, sans-serif;
 	font-size:13px;
@@ -8,6 +11,23 @@ body{
 #container{
 	width:700px;
 	margin:auto;
+}
+
+#topbar{
+	padding-left:15%;
+	padding-right:15%;
+	background-color:#000;
+	color:#FFF;
+	height:35px;
+	padding-top:5px;
+	font-weight:bold;
+	font-size:25px;
+}
+
+#topbar #user{
+	float:right;
+	font-size:13px;
+	padding-top:5px;
 }
 
 /* (User) Home Page */
@@ -24,4 +44,21 @@ body{
 	width:500px;
 	margin:auto;
 	background-color:#ccc;
+}
+
+/* Authentications */
+
+.authbutton{
+	width:70px;
+	background-color:#CCCCCC;
+	text-align:center;
+	float:left;
+	margin:5px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+}
+
+#buttons{
+	width:100%;
+	display:block;
 }
