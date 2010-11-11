@@ -8,6 +8,14 @@ body{
 	background-color:#F29F05;
 }
 
+a, a:visited{
+	color:#0c1226;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#F29F05;
+}
 
 #container{
 	width:900px;
@@ -29,6 +37,11 @@ body{
 	float:right;
 	font-size:13px;
 	padding-top:5px;
+}
+
+#topbar a{
+	text-decoration:none;
+	color:#fff;
 }
 
 #notice{
@@ -95,4 +108,16 @@ body{
 #in-use-auth img{
 	float:left;
 	margin-right:5px;
+}
+
+/* Achievements */
+
+#main_pane{
+	width:100%;
+	float:left;
+	margin:10px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	background-color:#D93D1A;
+	padding:10px;
 }

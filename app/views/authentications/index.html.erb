@@ -14,7 +14,7 @@
 		<% unless current_user.providers.include? provider %>
 			<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" %><br /><%= provider.gsub(/_/,'').titleize %>
 		<% else %>
-			<%= image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png") %><br /><%= provider.gsub(/_/,'').titleize %>
+			<%= image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_32.png") %><br /><%= provider.gsub(/_/,'').titleize %><br /><%= current_user.authentications.find_by_provider(provider).uid %>
 		<% end %>
 	<% else %>
 		<%= link_to image_tag("authbuttons/png/#{provider.gsub(/_/,'')}_64.png"), "/auth/#{provider}" %><br /><%= provider.gsub(/_/,'').titleize %>

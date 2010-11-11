@@ -6,11 +6,11 @@
 	<%= stylesheet_link_tag 'main' %>
 </head>
 <body>
-<div id="topbar"><%= link_to "Acompishm", path_to_home %> (search...)
+<div id="topbar"><%= link_to "Acompishm", path_to_home %>
 <% if current_user %>
 	<span id="user"><% current_user.authentications.each do |auth| %>
 		<%= image_tag "authbuttons/png/#{auth.provider.gsub(/_/,'')}_32.png", :width => 16, :height => 16 %>
-	<% end %><%= current_user.username %></span>
+	<% end %><%= current_user.username %> - <%= link_to 'Logout', destroy_user_session_path %></span>
 <% end %>
 </div>
 <% if notice %>
